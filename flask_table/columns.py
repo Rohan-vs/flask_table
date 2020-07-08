@@ -334,11 +334,11 @@ class ButtonCol(LinkCol):
             attrs=button_attrs,
             content=self.text(item, attr_list),
         )
-        form_attrs = dict(self.form_attrs)
-        form_attrs.update(dict(
+        form_attrs = (dict(
             method='post',
             action=self.url(item),
         ))
+        form_attrs.update(dict(self.form_attrs))
         form_hidden_fields_elements = [
             element(
                 'input',
